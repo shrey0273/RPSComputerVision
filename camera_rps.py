@@ -2,7 +2,6 @@ from run_model import  activate_model
 from manual_rps import get_comp_choice,get_winner,options
 
 def new_prediction():
-    print("Hello!!!")
     distribution = list((activate_model())[0])
     print("It is "+str(distribution))
     input("Continue?")
