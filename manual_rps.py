@@ -20,12 +20,10 @@ def get_user_choice():
 
 def get_winner(comp_choice,user_choice):
     decisions = {0:"Draw!",1:"Win!!",2:"Lose..."}
-    return decisions[(user_choice-comp_choice)%3]
+    return decisions[(user_choice-comp_choice)%3] if user_choice!="Nothing" else "Lose..."
 
 def play():
     comp_choice = get_comp_choice();
     print(comp_choice)
     user_choice = get_user_choice();
     print("You "+get_winner(comp_choice,user_choice))
-
-play()
