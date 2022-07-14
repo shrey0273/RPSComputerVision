@@ -26,5 +26,3 @@ def activate_model():
     # Destroy all the windows
     cv2.destroyAllWindows()
     return prediction
-
-activate_model()
