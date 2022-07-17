@@ -2,11 +2,13 @@ import cv2,time
 from keras.models import load_model
 import numpy as np
 
+model = load_model('keras_model.h5')
+cap = cv2.VideoCapture(0)
+data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+
 def activate_model():
     
-    model = load_model('keras_model.h5')
-    cap = cv2.VideoCapture(0)
-    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+
 
     end = time.time()+15
     while time.time()<end: 
@@ -21,8 +23,5 @@ def activate_model():
         print(prediction)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
-    # After the loop release the cap object
-    cap.release()
-    # Destroy all the windows
-    cv2.destroyAllWindows()
+
     return prediction

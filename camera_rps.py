@@ -1,4 +1,5 @@
-from run_model import  activate_model
+import cv2
+from run_model import  activate_model,cap
 from manual_rps import get_comp_choice,get_winner,options
 
 def new_prediction():
@@ -27,5 +28,9 @@ def play():
             games+=1
             losses+=1
         print("You "+result)
+    # After the loop release the cap object
+    cap.release()
+    # Destroy all the windows
+    cv2.destroyAllWindows()
 
 play()
