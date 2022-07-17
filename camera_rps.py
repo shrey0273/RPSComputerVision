@@ -11,7 +11,7 @@ def new_prediction():
     return distribution.index(max_val)
 
 def play():
-    games = 0
+    games = 1
     wins = 0
     losses = 0
     while wins!=3 and losses!=3:
